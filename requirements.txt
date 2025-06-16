@@ -1,0 +1,27 @@
+# Web framework
+fastapi
+uvicorn[standard]
+
+# OpenAI LLMs
+openai
+
+# Vector search (choose ONE — FAISS or Typesense)
+faiss-cpu             # for local vector DB
+# typesense           # uncomment if using Typesense instead
+
+# OCR dependencies
+pytesseract
+opencv-python-headless
+numpy
+
+# Markdown parsing (for scraping course notes)
+markdown-it-py
+
+# Async browser automation (for Discourse scraping)
+playwright
+tqdm
+python-dotenv
+requests
+
+# Optional dev tools
+python-multipart  # if later you allow file upload via forms
