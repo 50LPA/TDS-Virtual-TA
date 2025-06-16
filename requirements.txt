@@ -1,26 +1,14 @@
-# ─── Web API & ASGI server ──────────────────────────────
 fastapi==0.111.0
 uvicorn[standard]==0.29.0
+mangum==0.17.0
 
-# If you ever deploy as a Vercel / AWS Lambda function
-# mangum makes FastAPI work in serverless:
-mangum==0.17.0          # (safe to keep even if not used)
-
-# ─── RAG core ───────────────────────────────────────────
 faiss-cpu==1.8.0
-fastembed==0.7.1
-numpy==1.26.4           # faiss‑cpu is compiled against NumPy <2
+fastembed==0.6.1
+numpy==1.26.4
 python-dotenv==1.0.1
 requests==2.32.3
 
-# ─── Scraper utilities (optional at runtime) ───────────
 beautifulsoup4==4.12.3
 markdown-it-py==3.0.0
 tqdm==4.66.4
-playwright==1.43.0      # only needed for discourse.py first‑run login
-# playwright install deps: `playwright install`
-
-# ─── Dev / optional tools ───────────────────────────────
-# If you run embed_local.py on Windows you already pinned faiss‑cpu & NumPy
-# If you use Git LFS for large DB/FAISS assets, install:
-# git-lfs
+playwright==1.43.0
