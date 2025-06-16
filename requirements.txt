@@ -8,7 +8,7 @@ mangum==0.17.0          # (safe to keep even if not used)
 
 # ─── RAG core ───────────────────────────────────────────
 faiss-cpu==1.8.0
-fastembed==0.2.3
+fastembed==0.7.1
 numpy==1.26.4           # faiss‑cpu is compiled against NumPy <2
 python-dotenv==1.0.1
 requests==2.32.3
