@@ -7,13 +7,23 @@ FastAPI wrapper around the local RAG.
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
-
+from fastapi.middleware.cors import CORSMiddleware
 from .rag import init_rag, answer_question
 
 load_dotenv()               # still fine if you want to keep .env
 
 app = FastAPI(title="TDS Virtual TA (local)")
+origins = [
+    "https://exam.sanand.workers.dev",  # Frontend domain
+]
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,           # List of allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],             # Allows all methods: GET, POST, OPTIONS, etc.
+    allow_headers=["*"],             # Allows all headers including Content-Type
+)
 # initialise once at startup
 @app.on_event("startup")
 def _startup():
